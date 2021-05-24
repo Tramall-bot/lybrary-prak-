@@ -34,7 +34,6 @@ margin-right: 10px;
 
           <div class="row bgcl-SignalBlack gutter-x-none">
             <div class="mr-l10 col-sm mr-b30 mr-t20" style="margin-left:10px;">
-
               <div class=" float-start mr-l20 mr-t10" >
                   <div class="d-flex flex-column mx-wt200" >
                   <a href="products-page/Laptop/Laptop_Aorus.html" target="_blank" ><font color="#b49a5d">Роман</font></a>
@@ -42,7 +41,7 @@ margin-right: 10px;
                   <a href="products-page/Laptop/Laptop_Gseries.html" target="_blank" ><font color="#b49a5d">Поэма</font></a>
                   </div>
               </div>
-            </div>
+              </div>
                   <div class="mr-l10 col-sm mr-b30 mr-t20" style="margin-left:10px; ">
 
                     <div class="float-start mr-l20 mr-t10" >
@@ -75,8 +74,8 @@ margin-right: 10px;
                   </div>
                   
                 </div>
-          </div>
-                <div class="row bgcl-SignalBlack gutter-x-none" style="margin-top:20px">
+              </div>
+              <div class="row bgcl-SignalBlack gutter-x-none" style="margin-top:20px">
                 <div class="mr-l10 col-sm mr-b30" style="margin-left:10px;">
 
                 <div class=" float-start mr-l20 mr-t10">
@@ -108,8 +107,8 @@ margin-right: 10px;
 
                 </div>
               </div>
-            </div>
-             <div class="mr-l10 col-sm mr-b30" style="margin-left:10px;">
+              </div>
+              <div class="mr-l10 col-sm mr-b30" style="margin-left:10px;">
                 <div class="float-start mr-l20 mr-t10">
                 <div class="d-flex flex-column mx-wt200">
                 <a href="products-page/MotherBoards/MotherBoards-Aorus.html" target="_blank" ><font color="#b49a5d">Боевики</font></a>

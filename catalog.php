@@ -48,16 +48,13 @@ text-align: center;  border: 2px solid  #b49a5d; ">
 
 <ul class="navbar-nav mr-auto mb-2 mb-lg-0 w-100 justify-content-center Navbars">
 <li class="nav-item" > 
-<a class="nav-link active" aria-current="page" href="Главная.html"><font color="#b49a5d">Все</font></a> 
+<a class="nav-link active" aria-current="page" href="catalog.php"><font color="#b49a5d">Все</font></a> 
 </li> 
 <li class="nav-item" > 
 <a class="nav-link active" aria-current="page" href="#" id="flipShelfs"><font color="#b49a5d">Перевернуть список</font></a> 
 </li> 
 <li class="nav-item" > 
-<a class="nav-link active" aria-current="page" href="Плейлист.html"><font color="#b49a5d">По Алфавиту</font></a> 
-</li> 
-<li class="nav-item" > 
-<a class="nav-link active" aria-current="page" href="История создания.html"><font color="#b49a5d">По дате</font></a> 
+<a class="nav-link active" aria-current="page" href="catalog.php?date"><font color="#b49a5d">По дате</font></a> 
 </li> 
 <li class="nav-item" > 
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"> <font color="#b49a5d">
@@ -67,7 +64,7 @@ text-align: center;  border: 2px solid  #b49a5d; ">
 <?php
   $genres = getGenreAll();
   for($i = 0; $i<9;$i++){
-    echo '<li><a class="dropdown-item" href="#">'.$genres[$i]['name'].'</a></li>';
+    echo '<li><a class="dropdown-item" href="catalog.php?gen='.$genres[$i]['id'].'">'.$genres[$i]['name'].'</a></li>';
   }
 
 ?>
@@ -84,14 +81,26 @@ text-align: center;  border: 2px solid  #b49a5d; ">
 
 <br id="booksStart">
 <?php
-$genFilter = explode("=",$_SERVER['QUERY_STRING'])[1]; 
+if(explode("=",$_SERVER['QUERY_STRING'])[0] == "gen")
+$genFilter = explode("=",$_SERVER['QUERY_STRING'])[1];
+if($_SERVER['QUERY_STRING'] == "date")
+$dateFilter = true;
 $filteredBooks = array();
+function cmpDate($a, $b){
+  if($a['date'] > $b['date'])
+  return true;
+  else
+  return false;
+}
 if($genFilter != null){
   echo $genFilter;
   $filteredBooks = getBooksByGenreId($genFilter);
 }
 else{
   $filteredBooks = getBookAll();
+  if($dateFilter){
+    usort($filteredBooks, 'cmpDate');
+  }
 }
 foreach($filteredBooks as &$book){
   echo "<input type='hidden' value='".$book['title']."' class='title'>";
