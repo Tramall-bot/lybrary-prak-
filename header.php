@@ -98,7 +98,7 @@ if($_SESSION['isAdmin'])
 
 
 <?php
-  if(!empty($_SESSION['id'])){
+  if(!empty($_SESSION)){
     echo '<a href="logout.php"><img src="img/account.png" width="50"> </a>';
   }else
   echo '<a href="login.php"><img src="img/account.png" width="50"> </a>';

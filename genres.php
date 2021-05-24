@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -31,50 +34,74 @@ margin-right: 10px;
 
       <div id="all-categories" class=" mr-b30" >
         <div class="container" style="background-color: #413c37;">
-
+        <?php
+          include "connect.php";
+          $genres = getGenreAll();
+          if($genres){
+            $gencount = count($genres);
+            $crntgen = 0;
+            do{
+              echo '<div class="row bgcl-SignalBlack gutter-x-none" style="margin-top:20px">';
+              for($i = 0; $i<4;$i++){
+                if($crntgen < $gencount){
+                  echo '<div class="mr-l10 col-sm mr-b30 mr-t20" style="margin-left:10px;">';
+                  echo '<div class="float-start mr-l20 mr-t10">';
+                  echo '<div class="d-flex flex-column mx-wt200">';
+                  for($j = 0; $j<3;$j++){
+                    if($crntgen < $gencount){
+                      echo '<a href="catalog.php?gen='.$genres[$crntgen]['id'].'"><font color="#b49a5d">'.$genres[$crntgen]['name'].'</font></a>';
+                      $crntgen++;
+                    }
+                  }
+                  echo '</div>';
+                  echo '</div>';
+                  echo '</div>';
+                }
+              }
+              echo '</div>';
+            }while($crntgen < $gencount);
+          };
+        ?>
+        <!--
           <div class="row bgcl-SignalBlack gutter-x-none">
             <div class="mr-l10 col-sm mr-b30 mr-t20" style="margin-left:10px;">
               <div class=" float-start mr-l20 mr-t10" >
-                  <div class="d-flex flex-column mx-wt200" >
+                <div class="d-flex flex-column mx-wt200" >
                   <a href="products-page/Laptop/Laptop_Aorus.html" target="_blank" ><font color="#b49a5d">Роман</font></a>
                   <a href="products-page/Laptop/Laptop_Aero.html" target="_blank" ><font color="#b49a5d">Проза</font></a>
                   <a href="products-page/Laptop/Laptop_Gseries.html" target="_blank" ><font color="#b49a5d">Поэма</font></a>
-                  </div>
-              </div>
-              </div>
-                  <div class="mr-l10 col-sm mr-b30 mr-t20" style="margin-left:10px; ">
-
-                    <div class="float-start mr-l20 mr-t10" >
-                      <div class="d-flex flex-column mx-wt200" >
-                      <a href="products-page/Monitors/Monitor_Aorus.html" target="_blank" ><font color="#b49a5d">Хоррор</font></a>
-                      <a href="products-page/Monitors/Monitor_Gigabyte.html" target="_blank" ><font color="#b49a5d">Триллер</font></a>
-                      <a href="products-page/Monitors/Monitor_Gigabyte.html" target="_blank" ><font color="#b49a5d">Детективы</font></a>
-                      </div>
-                    </div>
-                  </div>
-                <div class="mr-l10 col-sm mr-b30 mr-t20" style="margin-left:10px;">
-
-                  <div class=" float-start mr-l20 mr-t10">
-                    <div class="d-flex flex-column mx-wt200">
-                    <a href="products-page/Pereferia/keyboards.html" target="_blank" ><font color="#b49a5d"> Стихи</font></a>
-                    <a href="products-page/Pereferia/Mouse.html" target="_blank" ><font color="#b49a5d">Фэнтехи</font></a>
-                    <a href="products-page/Pereferia/Mouse.html" target="_blank" ><font color="#b49a5d">Фантастика</font></a>
-                    </div>
-                  </div>
-
                 </div>
-                 <div class="mr-l10 col-sm mr-b30 mr-t20" style="margin-left:10px;">
-
-                  <div class=" float-start mr-l20 mr-t10">
-                    <div class="d-flex flex-column mx-wt200">
+              </div>
+            </div>
+            <div class="mr-l10 col-sm mr-b30 mr-t20" style="margin-left:10px; ">
+              <div class="float-start mr-l20 mr-t10" >
+                <div class="d-flex flex-column mx-wt200" >
+                  <a href="products-page/Monitors/Monitor_Aorus.html" target="_blank" ><font color="#b49a5d">Хоррор</font></a>
+                  <a href="products-page/Monitors/Monitor_Gigabyte.html" target="_blank" ><font color="#b49a5d">Триллер</font></a>
+                  <a href="products-page/Monitors/Monitor_Gigabyte.html" target="_blank" ><font color="#b49a5d">Детективы</font></a>
+                </div>
+              </div>
+            </div>
+            <div class="mr-l10 col-sm mr-b30 mr-t20" style="margin-left:10px;">
+              <div class=" float-start mr-l20 mr-t10">
+                <div class="d-flex flex-column mx-wt200">
+                  <a href="products-page/Pereferia/keyboards.html" target="_blank" ><font color="#b49a5d"> Стихи</font></a>
+                  <a href="products-page/Pereferia/Mouse.html" target="_blank" ><font color="#b49a5d">Фэнтехи</font></a>
+                  <a href="products-page/Pereferia/Mouse.html" target="_blank" ><font color="#b49a5d">Фантастика</font></a>
+                </div>
+               </div>
+              </div>
+              <div class="mr-l10 col-sm mr-b30 mr-t20" style="margin-left:10px;">
+                <div class=" float-start mr-l20 mr-t10">
+                  <div class="d-flex flex-column mx-wt200">
                     <a href="products-page/Pereferia/keyboards.html" target="_blank" ><font color="#b49a5d"> Повесть</font></a>
                     <a href="products-page/Pereferia/Mouse.html" target="_blank" ><font color="#b49a5d">История</font></a>
                     <a href="products-page/Pereferia/Mouse.html" target="_blank" ><font color="#b49a5d">Инциклопедии</font></a>
-                    </div>
                   </div>
-                  
-                </div>
+                </div>        
               </div>
+              </div>
+
               <div class="row bgcl-SignalBlack gutter-x-none" style="margin-top:20px">
                 <div class="mr-l10 col-sm mr-b30" style="margin-left:10px;">
 
@@ -119,6 +146,7 @@ margin-right: 10px;
               </div>
             </div>
 
+          -->
           </div>
         </div>
       </div>
