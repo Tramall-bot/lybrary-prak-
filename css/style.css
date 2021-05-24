@@ -1,0 +1,73 @@
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 70px;
+  font-size: 20px;
+}
+.body-top {
+  width: 80%;
+  border: none;
+  margin: auto;
+  font-family: Verdana;
+  font-style: normal;
+  font-size: normal;
+  font-weight: bold;
+  text-align: center;
+}
+header {
+  padding: 1em;
+  color: white;
+  background-color: #413c37;
+  vertical-align: center;
+}
+#logo {
+  max-width: 180px;
+  max-height: 140px;
+}
+.col-9 {
+  display: flex;
+}
+h1 {
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  #logo {
+    max-width: 100px;
+    max-height: 70px;
+  }
+  h1 {
+    font-size: 14px;
+  }
+}
+#menu {
+  background-color: #413c37;
+}
+a {
+  color: white !important;
+}
+.tour {
+  border: solid #007196;
+}
+.tour img {
+  width: 250px;
+  height: 170px;
+  padding: 5px;
+}
+.tour a {
+  color: white;
+  background-color: #66cdaa;
+}
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  color: #b49a5d;
+  background-color: #413c37;
+  border: 2px solid #b49a5d;
+  min-height: 150px;
+}
