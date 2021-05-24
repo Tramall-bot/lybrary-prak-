@@ -26,7 +26,7 @@ TABLE {
    }
    TD {
     background: #000000; /* Цвет фона ячеек */
-	border:2px solid #b49a5d;;
+  border:2px solid #b49a5d;;
    }
    /*.carousel-inner .carousel-item.active,.carousel-inner .carousel-item-next,.carousel-inner .carousel-item-prev{display:flex}
 .carousel-inner .carousel-item-right.active,.carousel-inner .carousel-item-next{transform:translateX(25%)}
@@ -70,6 +70,8 @@ TABLE {
 .ant-carousel {
   width: auto;
   position: relative;
+  background-color:#413c37;
+  border: 2px solid  #b49a5d;
 }
 
 .ant-carousel-hider {
@@ -84,16 +86,24 @@ TABLE {
   display: flex;
   justify-content: flex-start;
 }
-
+.card-img-top{
+  width: 50%;
+  height: 400px;
+  padding-right:4px;
+  
+}
 .ant-carousel-element {
   display: block;
   flex: 0 0 auto;
+  background-color:#413c37;
+  color:#b49a5d;
+  
 }
 
 /* Navigation item styles */
 div.ant-carousel-arrow-left,
 div.ant-carousel-arrow-right {
-  width: 22px;
+  width: 40px;
   height: 40px;
   background-color: white;
   position: absolute;
@@ -106,15 +116,15 @@ div.ant-carousel-arrow-left {
   left: -40px;
   top: 40%;
   display: block;
- /* Картика по светлее нужна 
- background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png") no-repeat;*/
+ 
+ background: url("img/left.png") no-repeat;
 }
 
 div.ant-carousel-arrow-right {
   right: -40px;
   top: 40%;
   display: block;
-  background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
+  background: url("img/right.png") no-repeat;
 }
 
 div.ant-carousel-arrow-left:hover {
@@ -135,6 +145,25 @@ div.ant-carousel-dots {
   text-align: center;
 }
 
+.pp {
+color:#b49a5d;
+text-decoration:none
+}
+
+.pp:active {
+color:#b49a5d;
+text-decoration:none
+}
+
+.pp:visited {
+color:#b49a5d;
+text-decoration:none
+}
+
+.pp:hover {
+color:#b49a5d;
+text-decoration: underline
+} 
 span.ant-dot {
   width: 10px;
   height: 10px;
@@ -173,9 +202,16 @@ span.ant-dot {
 <h5 style="margin: 20px; border: 2px solid  #b49a5d; color:#b49a5d; text-shadow: 20px;">ЭЛЕКТРОННАЯ БИБЛИОТЕКА</h5> 
 <div class="collapse navbar-collapse" id="navbarSupportedContent" > 
 
-<ul class="navbar-nav mr-auto mb-2 mb-lg-0 w-100 justify-content-center" > 
+<style>
+  .shusha {
+    padding-right: 90px;
+    
+  }
+</style>
 
-<li class="nav-item" > 
+<ul class="shusha navbar-nav mr-auto mb-2 mb-lg-0 w-100 justify-content-center"> 
+
+<li class="nav-item"> 
 
 <a class="nav-link active" aria-current="page" href="index.php"><font color="#b49a5d">Главная</font></a> 
 </li> 
@@ -222,35 +258,29 @@ span.ant-dot {
 </div> 
 
 </nav>
+<style>
+  container-jojo {
+    width: 100%;
+  }
+</style>
+<div class="container-joj" style="">
+  <div class="" style="background-color: #413c37; border: 2px solid  #b49a5d; width: 32%; margin: 0 auto; text-align: center; border-top: none; heigh: 30px;">
+    <div class="blockquote" style=" color:#b49a5d; font-size:35px; margin:0px; left: 50%; text-align: center;">ГЛАВНАЯ СТРАНИЦА</div>
+  </div>
+</div>
 
-<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color: #413c37; width: 32%; color:#b49a5d; float: none;
-text-align: center; margin-left:35%; border: 2px solid  #b49a5d; border-top: none;" >
-<div style="margin-left:12%;"class="navbar-nav" ><blockquote class="blockquote" style="font-size:35px; margin:0px; text-align: center;">
-  ГЛАВНАЯ СТРАНИЦА
-  
-</blockquote>
-</div>
-</nav>
-<!--
-<nav class="navbar navbar-expand-lg navbar-dark navbar-nav ml-auto" style="background-color: #413c37; width: 22%; color:#b49a5d;" >
-<div style="font:right;"class="navbar-nav ml-auto" ><blockquote class="blockquote" style="font-size:13px; margin:0px; text-align: right;">
-  Без книги – в мире ночь, без книги мрак кругом.
-  <footer class="blockquote-footer"> В. Гюго</footer>
-</blockquote>
-</div>
-</nav>-->
 </div>
 
 
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-</svg>
+<br>
 
 <!--Цитаты-->
-<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color: #413c37;margin:20px; width: 1150px; color:#b49a5d; float: none; height: 200px;
-text-align: center; margin-left:5%; border: 2px solid  #b49a5d; " >
-<div style="margin-left:15%;"class="navbar-nav" ><blockquote class="blockquote" style="font-size:20px; margin:0px; text-align: center;">
-  <?php
+<div class="container">
+  <div class="row" style="background-color: #413c37; border: 2px solid  #b49a5d; height: 130px; color:#b49a5d;">
+    <figure>
+  <blockquote class="blockquote">
+
+    <?php
   include "connect.php";
   $quotes = getQuotesAll();
   if($quotes){
@@ -263,10 +293,11 @@ text-align: center; margin-left:5%; border: 2px solid  #b49a5d; " >
     }
   }
   ?>
-</blockquote>
-</div><br>
-<div style="margin-left:15%;"class="navbar-nav" ><blockquote class="blockquote" style="font-size:20px; margin-top:90%; text-align: center;"><i>
-  <?php
+ 
+      </blockquote>
+    
+<figcaption class="blockquote-footer">
+    <?php
   if($quotes){
     $count = 0;
     echo "<p class='quote'>".$quotes[$count]['author']."</p>";
@@ -276,10 +307,13 @@ text-align: center; margin-left:5%; border: 2px solid  #b49a5d; " >
     }
   }
   ?>
-  </i>
-</blockquote>
+
+    </figcaption>
+</figure>
+  </div>
 </div>
-</nav>
+
+
 <script>
   const quotes = document.getElementsByClassName("quote");
   let i = 1;
@@ -344,7 +378,7 @@ text-align: center; margin-left:5%; border: 2px solid  #b49a5d; " >
 </script>
 
 <!-- Карусель -->
-<div class="ant-carousel">
+<div class="ant-carousel" >
   <div class="ant-carousel-hider">
     <ul class="ant-carousel-list">
       <?php
@@ -353,7 +387,7 @@ text-align: center; margin-left:5%; border: 2px solid  #b49a5d; " >
         if($book)
         for($i = count($book)-1; $i> count($book)-7; $i--){
           echo '<li class="ant-carousel-element">';
-          echo '<a href="#"><img src="'.$book[$i]['img'].'" alt="'.$i.'" style="heigth:250px;width:250px "><p>'.$book[$i]['title'].'</p></li></a>';
+          echo '<a href="#"><img class="card-img-top" src="'.$book[$i]['img'].'" alt="'.$i.'" "><p class="pp">'.$book[$i]['title'].'</p></li></a>';
         }
       ?>
     </ul>

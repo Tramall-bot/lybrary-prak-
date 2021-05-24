@@ -1,9 +1,5 @@
-<?php
-  session_start();
-  ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -34,51 +30,28 @@ TABLE {
 }
 </style>
 <title>ELECTRONIC LIBRARY</title>
-</head>
-
 <div class="container-joj" style="">
   <div class="" style="background-color: #413c37; border: 2px solid  #b49a5d; width: 32%; margin: 0 auto; text-align: center; border-top: none; heigh: 30px;">
-    <div class="blockquote" style=" color:#b49a5d; font-size:35px; margin:0px; left: 50%; text-align: center;">ОШИБКА ПРИ ВХОДЕ</div>
+    <div class="blockquote" style=" color:#b49a5d; font-size:35px; margin:0px; left: 50%; text-align: center;">РЕГИСТРАЦИЯ</div>
   </div>
 </div>
 </div>
 <body >
-  <div style="background-color: #413c37; width: 32%; color:#b49a5d; float: none;
+  <form action="test_user.php" method="POST" style="background-color: #413c37; width: 32%; color:#b49a5d; float: none;
 text-align: center; border: 2px solid  #b49a5d; padding: 30px; margin:20px; margin-left:34%;font-size:20px ">
-  <?php
-  if(isset($_POST['login'])){
-    $login=$_POST['login'];
-    if($login==''){
-        unset($login);
-    }
-}
-if(isset($_POST['password'])){
-    $pass=$_POST['password'];
-    if($pass==''){
-        unset($pass);
-    }
-}
-if(empty($login) or empty($pass)){
-  exit("Вы ввели не всю информацию,вернитесь назад и заполните все поля!");
-}
-include "connect.php";
-$user = getUserByLogin($login, $pass);
-if(empty($user['login'])){ 
-  exit("Введённый вами login или пароль неверный.");
-}else{
-  if($user['password'] == $pass){ 
-    $_SESSION['login'] = $user['login'];
-    $_SESSION['id'] = $user['id'];
-    $_SESSION['isAdmin'] = $user['isAdmin'];
-    echo "<script>location.replace('index.php');</script>";
-}
-else{
-    exit("Введённый вами login или пароль неверный.");
-}
-}
-?>
-  </div>
+<label for="login">Введите имя:<br></label>
+
+    <input type="text" name="name"><br>
+<br>
+    <label for="login">Введите логин:<br></label>
+
+    <input type="text" name="login"><br>
+    <br>
+    <label for="password">Введите пароль:<br></label>
+    <input type="password" name="password"><br>
+    <br>
+    <input type="submit" value="Войти" style="background-color: #b49a5d; color:#413c37;">
+  </form>
   
 </body>
 </html>
-

@@ -59,7 +59,7 @@ function displaybooks(reverse) {
         const a = document.createElement("a");
         a.href = "#";
         a.classList.add("btn", "btn-info");
-        a.innerText = "Перейти куда-нибудь";
+        a.innerText = "Читать";
         if (!reverse) {
           crntBook++;
         } else {

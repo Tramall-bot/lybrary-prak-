@@ -58,9 +58,16 @@ TABLE {
 <h5 style="margin: 20px; border: 2px solid  #b49a5d; color:#b49a5d; text-shadow: 20px;">ЭЛЕКТРОННАЯ БИБЛИОТЕКА</h5> 
 <div class="collapse navbar-collapse" id="navbarSupportedContent" > 
 
-<ul class="navbar-nav mr-auto mb-2 mb-lg-0 w-100 justify-content-center" > 
+<style>
+  .shusha {
+    padding-right: 90px;
+    
+  }
+</style>
 
-<li class="nav-item" > 
+<ul class="shusha navbar-nav mr-auto mb-2 mb-lg-0 w-100 justify-content-center"> 
+
+<li class="nav-item"> 
 
 <a class="nav-link active" aria-current="page" href="index.php"><font color="#b49a5d">Главная</font></a> 
 </li> 
@@ -79,7 +86,18 @@ TABLE {
 <li class="nav-item" > 
 <a class="nav-link active" aria-current="page" href="reviews.php"><font color="#b49a5d">Отзывы</font></a> 
 </li>  
-</a> 
+<!-- Вкладка обраткой связи для админа-->
+<?php
+if($_SESSION['isAdmin'])
+{
+  echo '<li class="nav-item" > ';
+  echo '<a class="nav-link active" aria-current="page" href="reviews.php"><font color="#b49a5d">Отзывы</font></a>';
+  echo '</li> ';
+}
+?>
+
+
+</ul>
 <!-- Вкладка обраткой связи для админа-->
 <?php
 if($_SESSION['isAdmin'])

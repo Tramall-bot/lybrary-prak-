@@ -29,17 +29,16 @@ TABLE {
   display:none;
 }
 </style>
-
-<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color: #413c37; width: 32%; color:#b49a5d; float: none;
-text-align: center; margin-left:35%; border: 2px solid  #b49a5d; border-top: none;" >
-<div style="margin-left:25%;"class="navbar-nav" ><blockquote class="blockquote" style="font-size:2em; margin:0px; text-align: center;">
-  ВХОД В АККАУНТ
-</blockquote>
+ <title>ELECTRONIC LIBRARY</title>
+<div class="container-joj" style="">
+  <div class="" style="background-color: #413c37; border: 2px solid  #b49a5d; width: 32%; margin: 0 auto; text-align: center; border-top: none; heigh: 30px;">
+    <div class="blockquote" style=" color:#b49a5d; font-size:35px; margin:0px; left: 50%; text-align: center;">ВХОД В АККАУНТ</div>
+  </div>
 </div>
-</nav>
+</div>
 <body >
   <form action="test_user.php" method="POST" style="background-color: #413c37; width: 32%; color:#b49a5d; float: none;
-text-align: center; border: 2px solid  #b49a5d; padding: 30px; margin:20px; margin-left:35%;font-size:20px ">
+text-align: center; border: 2px solid  #b49a5d; padding: 30px; margin:20px; margin-left:34%;font-size:20px ">
     <label for="login">Логин:<br></label>
 
     <input type="text" name="login"><br>
