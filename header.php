@@ -86,30 +86,8 @@ TABLE {
 <li class="nav-item" > 
 <a class="nav-link active" aria-current="page" href="reviews.php"><font color="#b49a5d">Отзывы</font></a> 
 </li>  
-<!-- Вкладка обраткой связи для админа-->
-<?php
-if($_SESSION['isAdmin'])
-{
-  echo '<li class="nav-item" > ';
-  echo '<a class="nav-link active" aria-current="page" href="reviews.php"><font color="#b49a5d">Отзывы</font></a>';
-  echo '</li> ';
-}
-?>
-
-
 </ul>
-<!-- Вкладка обраткой связи для админа-->
-<?php
-if($_SESSION['isAdmin'])
-{
-  echo '<li class="nav-item" > ';
-  echo '<a class="nav-link active" aria-current="page" href="reviews.php"><font color="#b49a5d">Отзывы</font></a>';
-  echo '</li> ';
-}
-?>
 
-
-</ul>
 
 
  

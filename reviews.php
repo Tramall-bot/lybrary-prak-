@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -10,12 +13,20 @@ include('header.php')?>
 </div>
 <body>
 
+  <form action="save_review.php" method="POST" id="reviewForm">
+    <input type="text" name="text" id="reviewInput" placeholder="Введите свой отзыв"><br>
+    <input type="hidden" name="date"id="date">
+    <button type="submit">Оставить отзыв</button>
+  </form>
+  <script src="save_review.js"></script>
   <?php
   include "connect.php";
   $reviews = getReviewsAll();
+  $reviews = array_reverse($reviews);
   foreach($reviews as &$rev){
     $user = getUserById($rev['user_id']);
     echo "<p> Имя пользователя: ".$user['name']."</p>";
+    echo "<p> Дата написания сообщения: ".$rev['date']."</p>";
     echo "<p> Текст сообщения: ".$rev['text']."</p>";
   }
   ?>

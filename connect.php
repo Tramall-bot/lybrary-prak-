@@ -139,6 +139,20 @@
         mysqli_close($conn);
         return $arr;
     }
+    function postReview($user, $text, $date){
+        $host = "lybrary";
+        $user = "root";
+        $password = "root";
+        $db = "library";
+        $conn = new mysqli($host, $user, $password, $db);
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $result = $conn->query("INSERT INTO reviews(user_id, text, date) VALUES ('$user', '$text','$date')");
+        mysqli_close($conn);
+        return $result;
+    }
+
     function getGenreAll(){
         $host = "lybrary";
         $user = "root";
@@ -179,4 +193,5 @@
         mysqli_close($conn);    
         return $arr;
     }
+    
 ?>
