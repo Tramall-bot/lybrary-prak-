@@ -39,6 +39,29 @@
         mysqli_close($conn);
         return $arr;
     }
+    function getBookByTitle($title){
+        $host = "lybrary";
+        $user = "root";
+        $password = "root";
+        $db = "library";
+        $conn = new mysqli($host, $user, $password, $db);
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
+        $result=$conn->query("SELECT * FROM book");
+        $arr = array();
+        if($result){
+            while($row = $result->fetch_assoc()) {
+                if(mb_strtolower($row['title'], 'utf-8') == mb_strtolower($title, 'utf-8')){
+                    $arr=$row;
+                }
+            }
+            $result->close();
+        }
+
+        mysqli_close($conn);
+        return $arr;
+    }
     function getBooksByGenreId($genid){
         $host = "lybrary";
         $user = "root";
