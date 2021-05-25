@@ -1,5 +1,6 @@
 const titletags = document.getElementsByClassName("title");
 const imgsrctags = document.getElementsByClassName("imgsrc");
+const bkIdTags = document.getElementsByClassName("bkid");
 const body = document.getElementsByTagName("body")[0];
 
 let reverse = false;
@@ -8,15 +9,18 @@ const bkNumber = document.getElementById("booknumber").value;
 
 const titles = Array();
 const imgsrcs = Array();
+const bkIds = Array();
 
 //Для для получения книг и фильтрации
 for (i = 0; i < titletags.length; i++) {
   titles.push(titletags[i].value);
   imgsrcs.push(imgsrctags[i].value);
+  bkIds.push(bkIdTags[i].value);
 }
 while (titletags.length > 0) {
   titletags[0].remove();
   imgsrctags[0].remove();
+  bkIdTags[0].remove();
 }
 document.getElementById("booknumber").remove();
 
@@ -57,7 +61,7 @@ function displaybooks(reverse) {
         h5.classList.add("card-title");
         h5.innerText = titles[crntBook];
         const a = document.createElement("a");
-        a.href = "#";
+        a.href = "book.php?bk=" + bkIds[crntBook];
         a.classList.add("btn", "btn-info");
         a.innerText = "Читать";
         if (!reverse) {

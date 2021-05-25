@@ -132,7 +132,7 @@ include "header.php";
         if($book)
         for($i = count($book)-1; $i> count($book)-7; $i--){
           echo '<li class="ant-carousel-element">';
-          echo '<a href="#"><img class="card-img-top" src="'.$book[$i]['img'].'" alt="'.$i.'" "><p class="pp">'.$book[$i]['title'].'</p></li></a>';
+          echo '<a href="book.php?bk='.$book[$i]['id'].'"><img class="card-img-top" src="'.$book[$i]['img'].'" alt="'.$i.'" "><p class="pp">'.$book[$i]['title'].'</p></li></a>';
         }
       ?>
     </ul>

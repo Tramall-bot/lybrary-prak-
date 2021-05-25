@@ -84,7 +84,8 @@ else{
   }
 }
 foreach($filteredBooks as &$book){
-  echo "<input type='hidden' value='".$book['title']."' class='title'>";
+echo "<input type='hidden' value='".$book['id']."' class='bkid'>";
+echo "<input type='hidden' value='".$book['title']."' class='title'>";
 echo "<input type='hidden' value='".$book['img']."' class='imgsrc'>";
 }
 echo "<input type='hidden' value='".count($filteredBooks)."' id='booknumber'>";

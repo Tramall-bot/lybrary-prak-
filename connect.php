@@ -19,6 +19,26 @@
         mysqli_close($conn);
         return $arr;
     }
+    function getBookById($bkid){
+        $host = "lybrary";
+        $user = "root";
+        $password = "root";
+        $db = "library";
+        $conn = new mysqli($host, $user, $password, $db);
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
+        $result=$conn->query("SELECT * FROM book WHERE id = '$bkid'");
+        $arr = array();
+        if($result){
+            while($row = $result->fetch_assoc()) {
+                $arr=$row;
+            }
+            $result->close();
+        }
+        mysqli_close($conn);
+        return $arr;
+    }
     function getBooksByGenreId($genid){
         $host = "lybrary";
         $user = "root";
@@ -99,7 +119,7 @@
         mysqli_close($conn);
         return $arr;
     }
-    function saveUser($name, $login, $password){
+    function saveUser($name, $login, $pass){
         $host = "lybrary";
         $user = "root";
         $password = "root";
@@ -108,7 +128,7 @@
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $conn->query("INSERT INTO users(name, login, password, isAdmin) VALUES('$name', '$login', '$password', 0)");
+        $conn->query("INSERT INTO users(name, login, password, isAdmin) VALUES('$name', '$login', '$pass', 0)");
         mysqli_close($conn);    
     }
     function getUserById($id){

@@ -1,126 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include('header.php')?>
+include('header.php');
+include "connect.php";
+$bookId = explode("=",$_SERVER['QUERY_STRING'])[1];
+if($bookId !=""){
+  $book = getBookById($bookId);
+}
+?>
 <div class="container-joj" style="">
   <div class="" style="background-color: #413c37; border: 2px solid  #b49a5d; width: 32%; margin: 0 auto; text-align: center; border-top: none; heigh: 30px;">
-    <div class="blockquote" style=" color:#b49a5d; font-size:35px; margin:0px; left: 50%; text-align: center;">BOOK</div>
+    <div class="blockquote" style=" color:#b49a5d; font-size:35px; margin:0px; left: 50%; text-align: center;"><?php if($book) echo $book['title']; ?></div>
   </div>
 </div>
 </div>
-<style>
-body{background:url(https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701823199.jpg);
-color:#fff;
-background-attachment:fixed;
-background-repeat: no-repeat;
-background-size:100% 100%;
-}
-TABLE {
-    background: #000000; /* Цвет фона таблицы */
-    color: yellow;  border:2px solid black;
-   }
-   TD {
-    background: #000000; /* Цвет фона ячеек */
-	border:2px solid yellow;
-   }
-
-h5{
-color:yellow;
- background: #000000;
-border:2px solid yellow;
-}
-
-   .menu {
-    position: fixed; /* Фиксированное положение */
-    right: 10px; /* Расстояние от правого края окна браузера */
-    top: 20%; /* Расстояние сверху */
-    padding: 10px; /* Поля вокруг текста */ 
-    background: #ffe; /* Цвет фона */ 
-    border: 1px solid #333; /* Параметры рамки */ 
-   }
-   .text {
-    height: 1000px;
-   }
-
-</style>
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <body>
-<aside>
-
-<div class="text-block";align="left";style="background-color: #000; color:yellow;border:2px solid yellow;"><br>
-<table width= "100%"; style="border:2px solid yellow;">
-<tr>
-<td><img src="..." class="img-fluid" alt="...">
-<h3> R2-D2:</h3>
-<p>Маленький и отважный дроид-астромеханик R2-D2 готов на всё, чтобы помочь друзьям.
-
-После верной службы Энакину Скайуокеру и Падме Амидала, дроид-астромеханик R2-D2 стал надёжным помощником их сыну Люку. Когда на кону стоит жизнь друзей, R2-D2 вместе со своим верным товарищем, протокольным дроидом С-3РО, бесстрашно сражается на стороне сил Сопротивления.
-
-R2-D2 не раз приходилось вытаскивать своих друзей из серьезных передряг, и, несмотря на маленький рост, он внёс весомый вклад в борьбу за восстановление мира в Галактике.
-<p><br><br><b><u>ПОЯВЛЕНИЯ</b></u>: все эпизоды</p>
-<p><b><u>РОСТ</b></u>: 1,09 м</p>
-<p><b><u>ОРУЖИЕ</b></u>: Электрошокер</p>
-<p><b><u>СВЯЗИ</b></u>: Галактическая республика,
-Альянс Повстанцев</p>
 
 
+<div class="container" style="padding-top: 1%;padding-left:160px ">
 
+  <div class="row justify-content-end" style="padding-bottom: 1%;padding-right: 15%; text-align: center;">
+    <div class="col-sm " style="background-color: #413c37; color:#b49a5d;border:2px solid #b49a5d;">
+      <br>
+      <img style="width: 60%;"src="<?php if($book){ echo $book['img'];} ?>"  alt="..." style="  background-color: #413c37; color:#b49a5d;border:2px solid #b49a5d;">
+ <br><br><p><b><u>НАЗВАНИЕ</b></u>:<?php if($book) echo $book['title']; ?></p>
+<p><b><u>ДАТА ИЗДАНИЯ</b></u>: <?php if($book) echo $book['date']; ?> г.</p>
+<p><b><u>АВТОР</b></u>:<?php if($book) echo $book['author']; ?></p>
+  </div>
+    <div class="col-sm" style="background-color: #413c37; color:#b49a5d;border:2px solid #b49a5d;">
+      <div class="text-block";>
+ <p><h3><b><u>КРАТКОЕ СОДЕРЖАНИЕ:</b></u></h3>
+  <?php if($book) echo $book['description']; ?></p>
+<input type="button" class="btn btn-danger" onclick="history.back();" value="Назад"/>
+<a href="<?php if($book) echo $book['pdf']; ?>" download=""><input type="button" class="btn btn-success" onclick="" value="Скачать pdf" /></a>
+<br><br>
+</div>
+    </div>
+    
+ </div>
 </div>
 
 
-
-
-
-<input type="button" class="btn btn-danger" onclick="history.back();" value="Назад"/>
-</td>
-</tr>
-</p>
-</td>
-</tr>
-
-</table>
-</aside>
 
 <article>
-<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Элемент аккордеона #1
+
+<div class="accordion " id="accordionExample">
+  <div class="accordion-item " style=" background-color: #413c37; width: 100%; color:#b49a5d; float: none;
+text-align: center;  border: 2px solid  #b49a5d; ">
+    <h2 class="accordion-header " id="headingOne" >
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style=" display:inline-block;text-align:center; background-color: #b49a5d;">
+        Читать онлайн:
       </button>
     </h2>
-    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+    <div id="collapseOne" class="accordion-collapse collapse is-disabled" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="min-height: 1200px">
       <div class="accordion-body">
-        <strong>Это тело аккордеона первого элемента.</strong> По умолчанию оно скрыто, пока плагин сворачивания не добавит соответствующие классы, которые мы используем для стилизации каждого элемента. Эти классы управляют общим внешним видом, а также отображением и скрытием с помощью переходов CSS. Вы можете изменить все это с помощью собственного CSS или переопределить наши переменные по умолчанию. Также стоит отметить, что практически любой HTML может быть помещен в <code>.accordion-body</code>, хотя переход ограничивает переполнение.
+       <embed src="<?php if($book) echo $book['pdf']; ?>" width="100%" height="1200px" />
+
       </div>
     </div>
   </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Элемент аккордеона #2
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>Это тело аккордеона второго элемента.</strong> По умолчанию он скрыт, пока плагин свертывания не добавит соответствующие классы, которые мы используем для стилизации каждого элемента. Эти классы управляют общим внешним видом, а также отображением и скрытием с помощью переходов CSS. Вы можете изменить все это с помощью собственного CSS или переопределить наши переменные по умолчанию. Также стоит отметить, что практически любой HTML может быть помещен в <code>.accordion-body</code>, хотя переход ограничивает переполнение.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Элемент аккордеона #3
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>Это тело аккордеона третьего элемента.</strong> По умолчанию оно скрыто, пока плагин свертывания не добавит соответствующие классы, которые мы используем для стилизации каждого элемента. Эти классы управляют общим внешним видом, а также отображением и скрытием с помощью переходов CSS. Вы можете изменить все это с помощью собственного CSS или переопределить наши переменные по умолчанию. Также стоит отметить, что практически любой HTML может быть помещен в <code>.accordion-body</code>, хотя переход ограничивает переполнение.
-      </div>
-    </div>
-  </div>
+  
 </div>
 </article>
 <div></div>
+
 <?php
 include('footer.php')?>
 
