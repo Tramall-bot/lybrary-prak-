@@ -170,14 +170,14 @@ div.ant-carousel-arrow-left {
   top: 40%;
   display: block;
 
-  background: "img/left.png" no-repeat;
+  background: url("img/left.png") no-repeat;
 }
 
 div.ant-carousel-arrow-right {
   right: -40px;
   top: 40%;
   display: block;
-  background: "img/right.png" no-repeat;
+  background: url("img/right.png") no-repeat;
 }
 
 div.ant-carousel-arrow-left:hover {
