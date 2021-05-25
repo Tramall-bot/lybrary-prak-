@@ -8,31 +8,6 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<style>
-
-body{background:url(https://proprikol.ru/wp-content/uploads/2020/03/kartinki-biblioteka-4.jpg);
-color:#fff;
-background-attachment:fixed;
-background-repeat: no-repeat;
-background-size:100% 100%;
-}
-
-TABLE {
-    background: #000000; /* Цвет фона таблицы */
-    color: yellow;  border:2px solid  #b49a5d;
-   }
-   TD {
-    background: #000000; /* Цвет фона ячеек */
-  border:2px solid #b49a5d;;
-   }
-   .carousel-inner .carousel-item.active,.carousel-inner .carousel-item-next,.carousel-inner .carousel-item-prev{display:flex}
-.carousel-inner .carousel-item-right.active,.carousel-inner .carousel-item-next{transform:translateX(25%)}
-.carousel-inner .carousel-item-left.active,.carousel-inner .carousel-item-prev{transform:translateX(-25%)}
-.carousel-inner .carousel-item-right,.carousel-inner .carousel-item-left{transform:translateX(0)}
-.hide_qt{
-  display:none;
-}
-</style>
 <title>ELECTRONIC LIBRARY</title>
 </head>
 
@@ -58,23 +33,39 @@ if(isset($_POST['password'])){
         unset($pass);
     }
 }
-if(empty($login) or empty($pass)){
-  exit("Вы ввели не всю информацию,вернитесь назад и заполните все поля!");
+if(isset($_POST['passwordcheck'])){
+  $passck=$_POST['passwordcheck'];
+  if($passck==''){
+      unset($passck);
+  }
+}
+if(isset($_POST['name'])){
+  $name=$_POST['name'];
+  if($name==''){
+      unset($name);
+  }
+}
+if(empty($login) or empty($pass) or empty($name)){
+  printError("Вы ввели не всю информацию,вернитесь назад и заполните все поля!");
+}
+if($passck != $pass){
+  printError("Поля пароля и повторения должны быть одинаковы");
 }
 include "connect.php";
 $user = getUserByLogin($login);
 if(empty($user['login'])){ 
-  exit("Введённый вами login или пароль неверный.");
+  saveUser($name, $login, $pass);
+  $usr = getUserByLogin($login);
+  $_SESSION['login'] = $usr['login'];
+  $_SESSION['id'] = $usr['id'];
+  $_SESSION['isAdmin'] = $usr['isAdmin'];
+  echo "<script>location.replace('index.php');</script>";
 }else{
-  if($user['password'] == $pass){ 
-    $_SESSION['login'] = $user['login'];
-    $_SESSION['id'] = $user['id'];
-    $_SESSION['isAdmin'] = $user['isAdmin'];
-    echo "<script>location.replace('index.php');</script>";
+  printError("Представленный Логин уже занят.");
 }
-else{
-    exit("Введённый вами login или пароль неверный.");
-}
+function printError($err){
+  echo $err;
+  exit ("<a href='create_user.php'>Назад</a>");
 }
 ?>
   </div>

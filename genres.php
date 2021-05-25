@@ -11,18 +11,7 @@ include('header.php')?>
   </div>
 </div>
 </div>
-<style type="text/css">
-.Navbars {
-flex-direction: row;
 
-}
-.Navbars>li {
-margin-left: 10px;
-margin-right: 10px;
-}
-
-
-</style>
 <body>
 
 

@@ -79,7 +79,7 @@
         mysqli_close($conn);
         return $arr;
     }
-    function getUserByLogin($log, $pass){
+    function getUserByLogin($log){
         $host = "lybrary";
         $user = "root";
         $password = "root";
@@ -98,6 +98,18 @@
         }
         mysqli_close($conn);
         return $arr;
+    }
+    function saveUser($name, $login, $password){
+        $host = "lybrary";
+        $user = "root";
+        $password = "root";
+        $db = "library";
+        $conn = new mysqli($host, $user, $password, $db);
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $conn->query("INSERT INTO users(name, login, password, isAdmin) VALUES('$name', '$login', '$password', 0)");
+        mysqli_close($conn);    
     }
     function getUserById($id){
         $host = "lybrary";

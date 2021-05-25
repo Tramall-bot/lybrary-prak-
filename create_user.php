@@ -8,19 +8,24 @@
  <title>ELECTRONIC LIBRARY</title>
 <div class="container-joj" style="">
   <div class="" style="background-color: #413c37; border: 2px solid  #b49a5d; width: 32%; margin: 0 auto; text-align: center; border-top: none; heigh: 30px;">
-    <div class="blockquote" style=" color:#b49a5d; font-size:35px; margin:0px; left: 50%; text-align: center;">ВХОД В АККАУНТ</div>
+    <div class="blockquote" style=" color:#b49a5d; font-size:35px; margin:0px; left: 50%; text-align: center;">Создание аккаунта</div>
   </div>
 </div>
 </div>
 <body >
-  <form action="test_user.php" method="POST" style="background-color: #413c37; width: 32%; color:#b49a5d; float: none;
+  <form action="save_user.php" method="POST" style="background-color: #413c37; width: 32%; color:#b49a5d; float: none;
 text-align: center; border: 2px solid  #b49a5d; padding: 30px; margin:20px; margin-left:34%;font-size:20px ">
+    <label for="name">Имя:<br></label>
+    <input type="text" name="name"><br>
+    <br>
     <label for="login">Логин:<br></label>
-
     <input type="text" name="login"><br>
     <br>
     <label for="password">Пароль:<br></label>
     <input type="password" name="password"><br>
+    <br>
+    <label for="password">Повторите пароль:<br></label>
+    <input type="password" name="passwordcheck"><br>
     <br>
     <input type="submit" value="Войти" style="background-color: #b49a5d; color:#413c37;">
   </form>

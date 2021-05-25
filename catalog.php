@@ -12,30 +12,7 @@ include('header.php')?>
   </div>
 </div>
 </div>
-<style type="text/css">
-.Navbars {
-flex-direction: row;
 
-}
-.Navbars>li {
-margin-left: 10px;
-margin-right: 10px;
-
-}
-.card {
-  background-color: #413c37;
-  width: 100%;
-  color: #b49a5d;
-  float: none;
-  text-align: center;
-  border: 2px solid #b49a5d;
-}
-	
-.card-img-top{
-  width: 100%;
-  height: 600px;
-}
-</style>
 <body>
 <!--Фильтр--->
 <br>
@@ -61,7 +38,7 @@ text-align: center;  border: 2px solid  #b49a5d; ">
 <a class="nav-link active" aria-current="page" href="catalog.php?date"><font color="#b49a5d">По дате</font></a> 
 </li> 
 <li class="nav-item" > 
-<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"> <font color="#b49a5d">
+<a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"> <font color="#b49a5d">
 По жанрам</font>
 </a> 
 <ul class="dropdown-menu" style="background-color: #b49a5d;" aria-labelledby="navbarDropdown"> 

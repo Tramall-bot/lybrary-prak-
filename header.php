@@ -6,31 +6,6 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<style>
-
-body{background:url(http://www.evasolar.ru/wp-content/uploads/2018/04/biblioteka.jpg);
-color:#fff;
-background-attachment:fixed;
-background-repeat: no-repeat;
-background-size:100% 100%;
-}
-
-TABLE {
-    background: #000000; /* Цвет фона таблицы */
-    color: yellow;  border:2px solid  #b49a5d;
-   }
-   TD {
-    background: #000000; /* Цвет фона ячеек */
-	border:2px solid #b49a5d;;
-   }
-   .carousel-inner .carousel-item.active,.carousel-inner .carousel-item-next,.carousel-inner .carousel-item-prev{display:flex}
-.carousel-inner .carousel-item-right.active,.carousel-inner .carousel-item-next{transform:translateX(25%)}
-.carousel-inner .carousel-item-left.active,.carousel-inner .carousel-item-prev{transform:translateX(-25%)}
-.carousel-inner .carousel-item-right,.carousel-inner .carousel-item-left{transform:translateX(0)}
-.hide_qt{
-  display:none;
-}
-</style>
 </head>
 <body style="margin: 0px 40px 0px 40px">
 
@@ -58,12 +33,6 @@ TABLE {
 <h5 style="margin: 20px; border: 2px solid  #b49a5d; color:#b49a5d; text-shadow: 20px;">ЭЛЕКТРОННАЯ БИБЛИОТЕКА</h5> 
 <div class="collapse navbar-collapse" id="navbarSupportedContent" > 
 
-<style>
-  .shusha {
-    padding-right: 90px;
-    
-  }
-</style>
 
 <ul class="shusha navbar-nav mr-auto mb-2 mb-lg-0 w-100 justify-content-center"> 
 
@@ -87,18 +56,22 @@ TABLE {
 <a class="nav-link active" aria-current="page" href="reviews.php"><font color="#b49a5d">Отзывы</font></a> 
 </li>  
 </ul>
+<div class="dropdown" style="margin:0">
+  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+  <img src="img/account.png" width="50">
+  </a>
 
-
-
- 
-
-
+  <ul class="dropdown-menu" style="background-color: #b49a5d;" aria-labelledby="dropdownMenuLink">
 <?php
   if(!empty($_SESSION)){
-    echo '<a href="logout.php"><img src="img/account.png" width="50"> </a>';
-  }else
-  echo '<a href="login.php"><img src="img/account.png" width="50"> </a>';
-?>
+    echo '<li><a class="dropdown-item" href="logout.php">Выйти</a></li>';
+  }else{
+    echo '<li><a class="dropdown-item" href="login.php">Войти</a></li>';
+    echo '<li><a class="dropdown-item" href="create_user.php">Зарегистрироваться</a></li>';
+  }
+?>  
+  </ul>
+</div>
 
 <a href=""><img src="img/favorites.png" width="50"> </a>
 <form class="d-flex">

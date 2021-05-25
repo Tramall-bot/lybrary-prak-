@@ -4,31 +4,6 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<style>
-
-body{background:url(https://proprikol.ru/wp-content/uploads/2020/03/kartinki-biblioteka-4.jpg);
-color:#fff;
-background-attachment:fixed;
-background-repeat: no-repeat;
-background-size:100% 100%;
-}
-
-TABLE {
-    background: #000000; /* Цвет фона таблицы */
-    color: yellow;  border:2px solid  #b49a5d;
-   }
-   TD {
-    background: #000000; /* Цвет фона ячеек */
-  border:2px solid #b49a5d;;
-   }
-   .carousel-inner .carousel-item.active,.carousel-inner .carousel-item-next,.carousel-inner .carousel-item-prev{display:flex}
-.carousel-inner .carousel-item-right.active,.carousel-inner .carousel-item-next{transform:translateX(25%)}
-.carousel-inner .carousel-item-left.active,.carousel-inner .carousel-item-prev{transform:translateX(-25%)}
-.carousel-inner .carousel-item-right,.carousel-inner .carousel-item-left{transform:translateX(0)}
-.hide_qt{
-  display:none;
-}
-</style>
 <title>ELECTRONIC LIBRARY</title>
 <div class="container-joj" style="">
   <div class="" style="background-color: #413c37; border: 2px solid  #b49a5d; width: 32%; margin: 0 auto; text-align: center; border-top: none; heigh: 30px;">

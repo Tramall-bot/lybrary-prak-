@@ -2,11 +2,6 @@
 <html lang="en" style="height:100%">
 <head>
   <title>Document</title>
-  <style>
-    .hide{
-      display: none;
-    }
-  </style>
 </head>
 <body >
   <button id="idSort">Сорт по ID</button><br>
