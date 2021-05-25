@@ -194,7 +194,7 @@
         mysqli_close($conn);
         return $arr;
     }
-    function postReview($user, $text, $date){
+    function postReview($usr, $text, $date){
         $host = "lybrary";
         $user = "root";
         $password = "root";
@@ -203,7 +203,7 @@
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $result = $conn->query("INSERT INTO reviews(user_id, text, date) VALUES ('$user', '$text','$date')");
+        $result = $conn->query("INSERT INTO reviews(user_id, text, date) VALUES ('$usr', '$text','$date')");
         mysqli_close($conn);
         return $result;
     }
