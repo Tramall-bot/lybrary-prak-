@@ -62,6 +62,8 @@ text-align: center;  border: 2px solid  #b49a5d; ">
 <br>
 <br id="booksStart">
 <?php
+$genFilter = null;
+$dateFilter = null;
 if(explode("=",$_SERVER['QUERY_STRING'])[0] == "gen")
 $genFilter = explode("=",$_SERVER['QUERY_STRING'])[1];
 if($_SERVER['QUERY_STRING'] == "date")
