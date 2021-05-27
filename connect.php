@@ -261,8 +261,10 @@
         $arr = array();
         if($result){
             while($row = $result->fetch_assoc()) {
-                if(mb_strtolower($row['name'], 'utf-8') == mb_strtolower($name, 'utf-8') )
-                $arr=$row;
+                if((mb_strtolower($row['name'], 'utf-8') == mb_strtolower($name, 'utf-8')) || str_contains(mb_strtolower($row['name'], 'utf-8'), mb_strtolower($name, 'utf-8')) ){
+                    $arr=$row;
+                    break;
+                }
             }
             $result->close();
         }
