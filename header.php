@@ -77,7 +77,7 @@
 <form class="d-flex" action="find_book.php" method="POST">
   
   
-      <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search" name="book">&#160;
+      <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search" name="search">&#160;
       <button class="btn btn-outline-success" type="submit">Найти</button>
     </form>
 

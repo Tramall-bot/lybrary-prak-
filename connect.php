@@ -248,5 +248,25 @@
         mysqli_close($conn);    
         return $arr;
     }
-    
+    function getGenreByName($name){
+        $host = "lybrary";
+        $user = "root";
+        $password = "root";
+        $db = "library";
+        $conn = new mysqli($host, $user, $password, $db);
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
+        $result=$conn->query("SELECT * FROM genre");
+        $arr = array();
+        if($result){
+            while($row = $result->fetch_assoc()) {
+                if(mb_strtolower($row['name'], 'utf-8') == mb_strtolower($name, 'utf-8') )
+                $arr=$row;
+            }
+            $result->close();
+        }
+        mysqli_close($conn);    
+        return $arr;
+    }
 ?>
