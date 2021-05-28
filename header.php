@@ -44,16 +44,14 @@
 <a class="nav-link active" aria-current="page" href="catalog.php"><font color="#b49a5d">Каталог</font></a> 
 </li> 
 <li class="nav-item" > 
-<a class="nav-link active" aria-current="page" href="us.php"><font color="#b49a5d">О нас</font></a> 
-</li>  
-
-
-<li class="nav-item" > 
 <a class="nav-link active" aria-current="page" href="genres.php"><font color="#b49a5d">Жанры</font></a> 
 </li>  
 </a> 
 <li class="nav-item" > 
 <a class="nav-link active" aria-current="page" href="reviews.php"><font color="#b49a5d">Отзывы</font></a> 
+</li>  
+<li class="nav-item" > 
+<a class="nav-link active" aria-current="page" href="us.php"><font color="#b49a5d">О нас</font></a> 
 </li>  
 </ul>
 <div class="dropdown" style="margin:0">
