@@ -23,8 +23,12 @@ include('header.php')?>
         <div class="container" style="background-color: #413c37;">
         <?php
           include "connect.php";
+          function srt($a, $b){
+            return strcmp($a['name'], $b['name']);
+          }
           $genres = getGenreAll();
           if($genres){
+            usort($genres, 'srt');
             $gencount = count($genres);
             $crntgen = 0;
             do{

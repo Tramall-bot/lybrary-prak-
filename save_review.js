@@ -4,7 +4,7 @@ document.getElementById("reviewForm").addEventListener("submit", (event) => {
     date.getHours() +
     ":" +
     date.getMinutes() +
-    " " +
+    ", " +
     date.getDate() +
     "." +
     (date.getMonth() + 1) +

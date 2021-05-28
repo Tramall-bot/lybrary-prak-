@@ -76,7 +76,6 @@ function cmpDate($a, $b){
   return false;
 }
 if($genFilter != null){
-  echo $genFilter;
   $filteredBooks = getBooksByGenreId($genFilter);
 }
 else{
@@ -85,10 +84,14 @@ else{
     usort($filteredBooks, 'cmpDate');
   }
 }
+if($filteredBooks)
 foreach($filteredBooks as &$book){
 echo "<input type='hidden' value='".$book['id']."' class='bkid'>";
 echo "<input type='hidden' value='".$book['title']."' class='title'>";
 echo "<input type='hidden' value='".$book['img']."' class='imgsrc'>";
+}
+else{
+  echo  "<input type='hidden' id='nobooks' value='1'>";
 }
 echo "<input type='hidden' value='".count($filteredBooks)."' id='booknumber'>";
 

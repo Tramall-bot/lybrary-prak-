@@ -73,7 +73,6 @@
   </ul>
 </div>
 
-<a href=""><img src="img/favorites.png" width="50"> </a>
 <form class="d-flex" action="find_book.php" method="POST">
   
   
